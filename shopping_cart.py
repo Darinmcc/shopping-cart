@@ -61,6 +61,21 @@ print(kart)
 
 print("--------------------")
 
+print("GREEN FOODS GROCERY")
+print("WWW.GREEN-FOODS-GROCERY.COM")
+print("---------------------------------")
+print("CHECKOUT AT: 2019-06-06 11:31 AM")
+print("---------------------------------")
+print("SELECTED PRODUCTS:")
+
+
+print("---------------------------------")
+print("SUBTOTAL: $61.24")
+print("TAX: $5.35")
+print("TOTAL: $66.59")
+print("---------------------------------")
+print("THANKS, SEE YOU AGAIN SOON!")
+print("---------------------------------")
 price_usd = to_usd(item['price'])
     
     
