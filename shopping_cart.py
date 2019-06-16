@@ -25,18 +25,46 @@ products = [
     {"id":20, "name": "Pomegranate Cranberry & Aloe Vera Enrich Drink", "department": "beverages", "aisle": "juice nectars", "price": 4.25}
 ] # based on data from Instacart: https://www.instacart.com/datasets/grocery-shopping-2017
 
-#print(products)
 
-#avail_inputs = 
+def to_usd(my_price):
+    return "${0:,.2f}".format(my_price)
+
+
+avail_ids = ["DONE"]
+
+kart = []
+
+for item in products:
+    if item["id"] not in avail_ids:
+        avail_ids.append(str(item["id"]))
+    
+print(avail_ids)
+
 
 print("--------------------")
 print("Welcome! Start entering items")
 print("--------------------")
 
-item = input("Please input a product identifier:")
+while ["DONE"] not in kart:
+    product_ID = input("Please input a product identifier:")
+    kart.append(product_ID)
+
+    if product_ID not in avail_ids:
+        print("Hey, are you sure that product identifier is correct? Please try again!")
+        exit()
+
+    elif product_ID == "DONE":
+        print("GENERATING RECEIPT")
+        break
+
+print(kart)
 
 print("--------------------")
-print("Is this item correct?",item)
+
+price_usd = to_usd(item['price'])
+    
+    
+
 
 
 # pprint(products)
@@ -73,3 +101,8 @@ print("Is this item correct?",item)
 #> ---------------------------------
 #> THANKS, SEE YOU AGAIN SOON!
 #> ---------------------------------
+
+
+#for item in products:
+    #if item["id"] == int(product_ID):
+        #print("Is this item correct?" + f"  {item['name']} ... {price_usd}")
