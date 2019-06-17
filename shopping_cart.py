@@ -47,7 +47,7 @@ print("--------------------")
 
 while ["DONE"] not in kart:
     product_ID = input("Please input a product identifier:")
-    kart.append(product_ID)
+    kart.append(int(product_ID))
 
     if product_ID not in avail_ids:
         print("Hey, are you sure that product identifier is correct? Please try again!")
@@ -58,16 +58,22 @@ while ["DONE"] not in kart:
         break
 
 print(kart)
+print()
 
 print("--------------------")
 
-print("GREEN FOODS GROCERY")
-print("WWW.GREEN-FOODS-GROCERY.COM")
+print("MCCOLLUM FOODS GROCERY")
+print("WWW.MCCOLLUM-FOODS-GROCERY.COM")
 print("---------------------------------")
 print("CHECKOUT AT: 2019-06-06 11:31 AM")
 print("---------------------------------")
 print("SELECTED PRODUCTS:")
 
+
+for entries in kart:
+    print(type(entries))
+    if int(item["id"]) in kart:
+        print("Is this item correct?" + f"  {item['name']} ... {price_usd}")
 
 print("---------------------------------")
 print("SUBTOTAL: $61.24")
