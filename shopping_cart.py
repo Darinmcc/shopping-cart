@@ -1,6 +1,7 @@
 # shopping_cart.py
 
 #from pprint import pprint
+import datetime
 
 products = [
     {"id":1, "name": "Chocolate Sandwich Cookies", "department": "snacks", "aisle": "cookies cakes", "price": 3.50},
@@ -29,7 +30,8 @@ products = [
 def to_usd(my_price):
     return "${0:,.2f}".format(my_price)
 
-
+def to_time(my_time):
+    return "{0:,.0f}".format(my_time)
 
 avail_ids = ["DONE"]
 
@@ -37,15 +39,15 @@ kart = []
 
 subtotal = 0
 
+now = datetime.datetime.now().replace(microsecond=0)
 
+AMPM = now.strftime("%p")
 
 for item in products:
     if item["id"] not in avail_ids:
         avail_ids.append(str(item["id"]))
 
 
-
-print(avail_ids)
 
 
 print("--------------------")
@@ -66,15 +68,13 @@ while ["DONE"] not in kart:
     else:
         kart.append(int(product_ID))
 
-print(kart)
-print()
 
 print("--------------------")
 
 print("MCCOLLUM FOODS GROCERY")
 print("WWW.MCCOLLUM-FOODS-GROCERY.COM")
 print("---------------------------------")
-print("CHECKOUT AT: 2019-06-06 11:31 AM")
+print(f"CHECKOUT AT: {now} {AMPM}")
 print("---------------------------------")
 print("SELECTED PRODUCTS:")
 
