@@ -35,6 +35,10 @@ avail_ids = ["DONE"]
 
 kart = []
 
+subtotal = 0
+
+
+
 for item in products:
     if item["id"] not in avail_ids:
         avail_ids.append(str(item["id"]))
@@ -81,12 +85,17 @@ for entries in kart:
         price_usd = to_usd(item['price'])
 
         if entries == item["id"]:
+            subtotal += item['price']
             print(f"...  {item['name']}  {price_usd}")
 
+tax = subtotal * 0.08725
+
+total = subtotal + tax           
+
 print("---------------------------------")
-print("SUBTOTAL: $61.24")
-print("TAX: $5.35")
-print("TOTAL: $66.59")
+print(f"SUBTOTAL: {subtotal}")
+print(f"TAX: {tax}")
+print(f"TOTAL: {total}")
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("---------------------------------")
