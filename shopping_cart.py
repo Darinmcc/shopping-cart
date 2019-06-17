@@ -30,6 +30,7 @@ def to_usd(my_price):
     return "${0:,.2f}".format(my_price)
 
 
+
 avail_ids = ["DONE"]
 
 kart = []
@@ -37,7 +38,9 @@ kart = []
 for item in products:
     if item["id"] not in avail_ids:
         avail_ids.append(str(item["id"]))
-    
+
+
+
 print(avail_ids)
 
 
@@ -47,7 +50,6 @@ print("--------------------")
 
 while ["DONE"] not in kart:
     product_ID = input("Please input a product identifier:")
-    kart.append(int(product_ID))
 
     if product_ID not in avail_ids:
         print("Hey, are you sure that product identifier is correct? Please try again!")
@@ -56,6 +58,9 @@ while ["DONE"] not in kart:
     elif product_ID == "DONE":
         print("GENERATING RECEIPT")
         break
+    
+    else:
+        kart.append(int(product_ID))
 
 print(kart)
 print()
@@ -71,9 +76,12 @@ print("SELECTED PRODUCTS:")
 
 
 for entries in kart:
-    print(type(entries))
-    if int(item["id"]) in kart:
-        print("Is this item correct?" + f"  {item['name']} ... {price_usd}")
+    for item in products:
+    
+        price_usd = to_usd(item['price'])
+
+        if entries == item["id"]:
+            print(f"...  {item['name']}  {price_usd}")
 
 print("---------------------------------")
 print("SUBTOTAL: $61.24")
@@ -82,7 +90,7 @@ print("TOTAL: $66.59")
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("---------------------------------")
-price_usd = to_usd(item['price'])
+
     
     
 
