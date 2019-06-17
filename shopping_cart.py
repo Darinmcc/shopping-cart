@@ -90,12 +90,16 @@ for entries in kart:
 
 tax = subtotal * 0.08725
 
-total = subtotal + tax           
+total = subtotal + tax      
+
+usd_subtotal = to_usd(subtotal)
+usd_tax = to_usd(tax)
+usd_total = to_usd(total)
 
 print("---------------------------------")
-print(f"SUBTOTAL: {subtotal}")
-print(f"TAX: {tax}")
-print(f"TOTAL: {total}")
+print(f"SUBTOTAL: {usd_subtotal}")
+print(f"TAX: {usd_tax}")
+print(f"TOTAL: {usd_total}")
 print("---------------------------------")
 print("THANKS, SEE YOU AGAIN SOON!")
 print("---------------------------------")
