@@ -1,6 +1,10 @@
 # shopping_cart.py
 
 #from pprint import pprint
+
+
+# additional task add dictionary to capture how many per item
+# then p for p in products if p["per tiem"] == per pound
 import datetime
 
 products = [
